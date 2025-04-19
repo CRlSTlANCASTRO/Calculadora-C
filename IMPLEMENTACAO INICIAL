@@ -1,0 +1,48 @@
+#include <stdio.h>
+#include <ctype.h> 
+
+int main() {
+    char continuar;
+    
+    do {
+        printf("\n--- ETAPA 1: IMPLEMENTACAO INICIAL ---\n");
+        
+        float num1, num2;
+        char operador;
+        
+        printf("Digite o primeiro numero: ");
+        scanf("%f", &num1);
+        printf("Digite o segundo numero: ");
+        scanf("%f", &num2);
+        printf("Digite a operacao (+, -, *, /): ");
+        scanf(" %c", &operador);
+
+        
+        if (operador == '+') {
+            printf("Resultado: %.2f\n", num1 + num2);
+        } 
+        else if (operador == '-') {
+            printf("Resultado: %.2f\n", num1 - num2);
+        }
+        else if (operador == '*') {
+            printf("Resultado: %.2f\n", num1 * num2);
+        }
+        else if (operador == '/') {
+            if (num2 != 0) {
+                printf("Resultado: %.2f\n", num1 / num2);
+            } else {
+                printf("Erro: divisao por zero!\n");
+            }
+        } else {
+            printf("Operador invalido!\n");
+        }
+
+        printf("\nDeseja continuar? (S/N): ");
+        scanf(" %c", &continuar);
+        continuar = tolower(continuar);
+        
+    } while (continuar == 's');
+
+    printf("Programa encerrado.\n");
+    return 0;
+}
